@@ -1,5 +1,5 @@
 "use strict";
-export function redirect(request, reply) {
+function redirect(request, reply) {
   if (reply.sent) {
     return;
   }
@@ -14,3 +14,4 @@ export function redirect(request, reply) {
     .code(302)
     .send();
 }
+module.exports = redirect;
