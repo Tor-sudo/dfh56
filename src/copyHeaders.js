@@ -1,5 +1,5 @@
 "use strict";
-export function copyHeaders(response, reply) {
+function copyHeaders(response, reply) {
   for (const [key, value] of Object.entries(response.headers)) {
     try {
       reply.header(key, value);
@@ -8,3 +8,4 @@ export function copyHeaders(response, reply) {
     }
   }
 }
+module.exports = copyHeaders;
