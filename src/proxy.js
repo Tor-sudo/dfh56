@@ -1,11 +1,11 @@
-import { request as undiciRequest } from 'undici';
-import lodash from 'lodash';
-import { generateRandomIP, randomUserAgent } from './utils.js';
-import { copyHeaders as copyHdrs } from './copyHeaders.js';
-import { compressImg as applyCompression } from './compress.js';
-import { bypass as performBypass } from './bypass.js';
-import { redirect as handleRedirect } from './redirect.js';
-import { shouldCompress as checkCompression } from './shouldCompress.js';
+const undici = require('undici');
+const lodash = require('lodash');
+const { generateRandomIP, randomUserAgent } = require('./utils.js');
+const { copyHeaders: copyHdrs } = require('./copyHeaders.js');
+const { compressImg: applyCompression } = require('./compress.js');
+const { bypass: performBypass } = require('./bypass.js');
+const { redirect: handleRedirect } = require('./redirect.js');
+const { shouldCompress: checkCompression } = require('./shouldCompress.js');
 
 const viaHeaders = [
     '1.1 example-proxy-service.com (ExampleProxy/1.0)',
@@ -19,7 +19,7 @@ function randomVia() {
     return viaHeaders[index];
 }
 
-export async function processRequest(request, reply) {
+async function processRequest(request, reply) {
     let url = request.query.url;
 
     if (!url) {
@@ -46,7 +46,7 @@ export async function processRequest(request, reply) {
     const userAgent = randomUserAgent();
 
     try {
-        const response = await undiciRequest(request.params.url, {
+        const response = await undici.request(request.params.url, {
             headers: {
                 ...lodash.pick(request.headers, ['cookie', 'dnt', 'referer']),
                 'x-forwarded-for': randomIP,
@@ -81,3 +81,5 @@ export async function processRequest(request, reply) {
         return handleRedirect(request, reply);
     }
 }
+
+module.exports = processRequest;
