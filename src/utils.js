@@ -36,4 +36,4 @@ function randomUserAgent() {
   return userAgents[randomIndex];
 }
 
-module.exports = {generateRandomIP(), randomUserAgent()};
+module.exports = {generateRandomIP, randomUserAgent};
