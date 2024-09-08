@@ -1,7 +1,7 @@
 "use strict";
 const sharp = require('sharp');
 const { redirect } = require('./redirect.js');
-export async function compressImg(request, reply, input) {
+async function compressImg(request, reply, input) {
     const format = request.params.webp ? 'webp' : 'jpeg'
 
     try {
@@ -30,3 +30,5 @@ export async function compressImg(request, reply, input) {
         return redirect(request, reply);
     }
 }
+
+module.exports = compressImg;
