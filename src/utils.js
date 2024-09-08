@@ -25,13 +25,15 @@ const userAgents = [
   'Mozilla/5.0 (Linux; Android 11; Pixel 5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Mobile Safari/537.36'
 ];
 
-export function generateRandomIP() {
+function generateRandomIP() {
   // Generate realistic IP ranges; private IP addresses for safety
   const randomByte = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
   return `${randomByte(10, 192)}.${randomByte(0, 255)}.${randomByte(0, 255)}.${randomByte(1, 254)}`;
 }
 
-export function randomUserAgent() {
+function randomUserAgent() {
   const randomIndex = Math.floor(Math.random() * userAgents.length);
   return userAgents[randomIndex];
 }
+
+module.exports = {generateRandomIP(), randomUserAgent()};
