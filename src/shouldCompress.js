@@ -2,7 +2,7 @@
 const MIN_COMPRESS_LENGTH = 1024
 const MIN_TRANSPARENT_COMPRESS_LENGTH = MIN_COMPRESS_LENGTH * 100
 
-export function shouldCompress(request) {
+function shouldCompress(request) {
   const { originType, originSize, webp } = request.params
 
   if (!originType.startsWith('image')) return false;
@@ -19,3 +19,4 @@ export function shouldCompress(request) {
 
   return true;
 }
+module.exports = shouldCompress;
