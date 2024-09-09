@@ -31,4 +31,4 @@ async function compressImg(request, reply, input) {
     }
 }
 
-module.exports = {compressImg};
+module.exports = compressImg;
