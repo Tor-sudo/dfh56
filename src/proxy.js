@@ -65,7 +65,7 @@ async function processRequest(request, reply) {
             return handleRedirect(request, reply);
         }
 
-        copyHdrs(response, reply);
+        copyHeaders(response, reply);
         reply.header('content-encoding', 'identity');
         request.params.originType = response.headers['content-type'] || '';
         request.params.originSize = parseInt(response.headers['content-length'], 10) || 0;
