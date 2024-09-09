@@ -14,4 +14,4 @@ function redirect(request, reply) {
     .code(302)
     .send();
 }
-module.exports = redirect;
+module.exports = {redirect};
