@@ -8,4 +8,4 @@ function bypass(request, reply, stream) {
     }
     return reply.code(200).send(stream);
 }
-module.exports = bypass;
+module.exports = {bypass};
