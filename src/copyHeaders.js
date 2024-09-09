@@ -8,4 +8,4 @@ function copyHeaders(response, reply) {
     }
   }
 }
-module.exports = {copyHeaders};
+module.exports = copyHeaders;
