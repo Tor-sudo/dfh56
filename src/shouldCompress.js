@@ -19,4 +19,4 @@ function shouldCompress(request) {
 
   return true;
 }
-module.exports = {shouldCompress};
+module.exports = shouldCompress;
