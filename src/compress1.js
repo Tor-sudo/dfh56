@@ -1,11 +1,11 @@
 "use strict";
-import sharp from 'sharp';
-import { redirect } from './redirect.js';
+const sharp = require('sharp');
+const redirect = require('./redirect.js');
 
 // Define the sharpStream function
 const sharpStream = () => sharp({ animated: false, unlimited: true });
 
-export async function compressImg(request, reply, input) {
+ async function compressImg(request, reply, input) {
     const format = request.params.webp ? 'webp' : 'jpeg';
 
     try {
@@ -36,3 +36,4 @@ export async function compressImg(request, reply, input) {
         console.error('Error during image compression:', error.message);
         return redirect(request, reply);
     }
+module.exports = compressImg;
