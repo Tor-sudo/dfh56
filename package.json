@@ -8,7 +8,6 @@
     "start": "node server2.js"
   },
   "dependencies": {
-    "corepack": "0.29.3",
     "fastify": "4.28.1",
     "lodash": "4.17.21",
     "sharp": "0.33.5",
