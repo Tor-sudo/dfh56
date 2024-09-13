@@ -1,11 +1,11 @@
 const undici = require('undici');
 const lodash = require('lodash');
-const { generateRandomIP, randomUserAgent } = require('./utils.js');
-const copyHeaders = require('./copyHeaders.js');
-const applyCompression = require('./compress.js');
-const performBypass = require('./bypass.js');
-const handleRedirect = require('./redirect.js');
-const checkCompression = require('./shouldCompress.js');
+const { generateRandomIP, randomUserAgent } = require('./hijack.js');
+const copyHeaders = require('./copy.js');
+const applyCompression = require('./coco.js');
+const performBypass = require('./bye.js');
+const handleRedirect = require('./roto.js');
+const checkCompression = require('./scoco.js');
 
 const viaHeaders = [
     '1.1 example-proxy-service.com (ExampleProxy/1.0)',
