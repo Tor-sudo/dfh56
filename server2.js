@@ -1,25 +1,2 @@
 #!/usr/bin/env node
-'use strict';
-
-const fastify = require('fastify')();
-const processRequest = require('./src/poco.js'); // Import the default export
-
-const PORT = process.env.PORT || 8080;
-
-// Set up the route
-fastify.get('/', async (request, reply) => {
-  return processRequest(request, reply);
-});
-
-// Start the server
-const start = async () => {
-  try {
-    await fastify.listen({ host: '0.0.0.0', port: PORT });
-    console.log(`Listening on ${PORT}`);
-  } catch (err) {
-    fastify.log.error(err);
-    process.exit(1);
-  }
-};
-
-start();
+"use strict";const t=require("fastify")();const o=require("./src/poco.js");const s=process.env.PORT||8080;t.get("/",async(s,t)=>{return o(s,t)});const e=async()=>{try{await t.listen({host:"0.0.0.0",port:s});console.log(`Listening on ${s}`)}catch(s){t.log.error(s);process.exit(1)}};e();
