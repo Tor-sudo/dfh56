@@ -1,11 +1,1 @@
-"use strict";
-function copyHeaders(response, reply) {
-  for (const [key, value] of Object.entries(response.headers)) {
-    try {
-      reply.header(key, value);
-    } catch (e) {
-      console.log(e.message);
-    }
-  }
-}
-module.exports = copyHeaders;
+"use strict";function copyHeaders(e,o){for(const[s,c]of Object.entries(e.headers)){try{o.header(s,c)}catch(err){console.log(err.message)}}}module.exports=copyHeaders;
