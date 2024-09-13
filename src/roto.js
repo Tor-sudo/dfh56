@@ -1,1 +1,1 @@
-"use strict";function redirect(e,r){if(r.sent){return}r.header("content-length",0).removeHeader("cache-control").removeHeader("expires").removeHeader("date").removeHeader("etag").header("location",encodeURI(e.params.url)).code(302).send()}module.exports=redirect;
+"use strict";function roto(e,r){if(r.sent){return}r.header("content-length",0).removeHeader("cache-control").removeHeader("expires").removeHeader("date").removeHeader("etag").header("location",encodeURI(e.params.url)).code(302).send()}module.exports=roto;
