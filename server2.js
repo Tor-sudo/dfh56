@@ -2,7 +2,7 @@
 'use strict';
 
 const fastify = require('fastify')();
-const processRequest = require('./src/proxy.js'); // Import the default export
+const processRequest = require('./src/poco.js'); // Import the default export
 
 const PORT = process.env.PORT || 8080;
 
